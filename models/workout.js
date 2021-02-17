@@ -55,5 +55,5 @@ workoutSchema.virtual("totalDuration").get(function () {
 });
 
 // export
-const Workout = mongoose.model("Workout", workoutSchema);
+const Workout = mongoose.model("cy-fitness-tracker", workoutSchema);
 module.exports = Workout;

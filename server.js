@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
+
 // local host 
 const PORT = process.env.PORT || 3005;
 
@@ -23,7 +24,7 @@ app.listen(PORT, () => {
 
 // mongoose connection
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/workout", 
+    process.env.MONGODB_URI || "mongodb://localhost/cy-fitness-tracker", 
 { 
     useNewUrlParser: true,
     useCreateIndex: true,

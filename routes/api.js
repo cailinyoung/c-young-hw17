@@ -28,7 +28,7 @@ Workout.create({})
 router.put("/api/workouts/:id", ({ body, params }, res) => {
     Workout.findByIdAndUpdate(
         params.id,
-        { $push: { exercises: body } },
+        { $push: { exercise: body } },
         { new: true, runValidators: true })
         .then(data => res.json(data))
         .catch(err => {
