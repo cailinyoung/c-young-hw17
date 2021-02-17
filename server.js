@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3005;
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 app.use(express.static("public"));
 
 
@@ -24,7 +25,7 @@ app.listen(PORT, () => {
 
 // mongoose connection
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/cy-fitness-tracker", 
+    process.env.MONGODB_URI || "mongodb://localhost/workout", 
 { 
     useNewUrlParser: true,
     useCreateIndex: true,
