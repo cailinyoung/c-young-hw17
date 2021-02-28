@@ -18,14 +18,12 @@ app.use(express.static("public"));
 // routes
 app.use(require("./routes/htmlRoutes.js"));
 app.use(require("./routes/api.js"));
-// app listening
-app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}`);
-});
 
 // mongoose connection
+const configDB="mongodb://localhost/workout"; 
+
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/workout", 
+    process.env.MONGODB_URI || configDB, 
 { 
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -35,3 +33,8 @@ mongoose.connect(
     // connect or throw
 }).then(() => console.log('connected to db'))
 .catch(err=> console.error('an error has occured', err));
+
+// app listening
+app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}`);
+});
